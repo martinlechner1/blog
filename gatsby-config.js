@@ -1,11 +1,12 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
-    author: `Kyle Mathews`,
-    description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsby-starter-blog-demo.netlify.com/`,
+    title: `Functional thinking`,
+    author: `Martin Lechner`,
+    description: `A blog about functional programming in practice`,
+    siteUrl: `https://blog.lechner.work`,
     social: {
-      twitter: `kylemathews`,
+      twitter: `m4nl5r`,
+      github: `martinlechner1`,
     },
   },
   plugins: [
@@ -57,8 +58,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gatsby Starter Blog`,
-        short_name: `GatsbyJS`,
+        name: `Functional thinking`,
+        short_name: `Functional thinking`,
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#663399`,
