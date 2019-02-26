@@ -14,7 +14,7 @@ class Layout extends React.Component {
         <h1
           style={{
             ...scale(1.5),
-            marginBottom: rhythm(1.5),
+            marginBottom: rhythm(1),
             marginTop: 0,
           }}
         >
@@ -22,7 +22,7 @@ class Layout extends React.Component {
             style={{
               boxShadow: `none`,
               textDecoration: `none`,
-              color: `inherit`,
+              color: "var(--textLink)",
             }}
             to={`/`}
           >
@@ -42,7 +42,7 @@ class Layout extends React.Component {
             style={{
               boxShadow: `none`,
               textDecoration: `none`,
-              color: `inherit`,
+              color: `var(--textLink)`,
             }}
             to={`/`}
           >
@@ -54,19 +54,41 @@ class Layout extends React.Component {
     return (
       <div
         style={{
+          backgroundColor: "var(--bg)",
           marginLeft: `auto`,
           marginRight: `auto`,
-          maxWidth: rhythm(24),
+          maxWidth: rhythm(32),
           padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
         }}
       >
         <header>{header}</header>
         <main>{children}</main>
         <footer>
-          <a href="/rss.xml">RSS Feed</a> {` `}
-          <Link to={"/legal"}>Legal notice</Link>
-          {` `}
-          <Link to={"/privacy"}>Privacy</Link>
+          <a
+            style={{ color: `var(--textLink)` }}
+            href={`https://twitter.com/m4nl5r`}
+          >
+            Twitter
+          </a>
+          {` • `}
+          <a
+            style={{ color: `var(--textLink)` }}
+            href={`https://github.com/martinlechner1`}
+          >
+            Github
+          </a>
+          {` • `}
+          <a style={{ color: `var(--textLink)` }} href="/rss.xml">
+            RSS Feed
+          </a>{" "}
+          {` • `}
+          <Link style={{ color: `var(--textLink)` }} to={"/legal"}>
+            Legal notice
+          </Link>
+          {` • `}
+          <Link style={{ color: `var(--textLink)` }} to={"/privacy"}>
+            Privacy
+          </Link>
         </footer>
       </div>
     )

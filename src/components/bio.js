@@ -14,7 +14,7 @@ function Bio() {
           <div
             style={{
               display: `flex`,
-              marginBottom: rhythm(2.5),
+              marginBottom: rhythm(1),
             }}
           >
             <Image
@@ -30,16 +30,16 @@ function Bio() {
                 borderRadius: `50%`,
               }}
             />
-            <p>
-              Written by <strong>{author}</strong> who lives and works in
-              Munich.
-              {` `}
-              <br />
-              <a href={`https://twitter.com/${social.twitter}`}>
-                Follow on twitter{` `}
+            <p style={{ marginBottom: 0 }}>
+              Personal blog by{" "}
+              <a
+                style={{ color: "var(--textLink)" }}
+                href={`https://twitter.com/${social.twitter}`}
+              >
+                {author}
               </a>
-              -{` `}
-              <a href={`https://github.com/${social.github}`}>Github</a>
+              <br />
+              Thoughts about (functional) programming
             </p>
           </div>
         )

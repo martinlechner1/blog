@@ -62,7 +62,7 @@ module.exports = {
         short_name: `Functional thinking`,
         start_url: `/`,
         background_color: `#ffffff`,
-        theme_color: `#663399`,
+        theme_color: `#4B0082`,
         display: `minimal-ui`,
         icon: `content/assets/gatsby-icon.png`,
       },
