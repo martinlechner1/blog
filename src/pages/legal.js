@@ -27,11 +27,14 @@ class NotFoundPage extends React.Component {
         <h2> Copyright</h2>
         <p>
           All content on this website is, unless stated otherwise, subject to
-          the [BY-NC-SA
-          license](https://creativecommons.org/licenses/by-nc-sa/4.0/). The
-          content may therefore be copied and redistributed at any time for
-          non-commercial purposes, provided my name is mentioned and the same
-          license terms apply. All other content is subject to German copyright.
+          the{" "}
+          <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+            BY-NC-SA license
+          </a>
+          . The content may therefore be copied and redistributed at any time
+          for non-commercial purposes, provided my name is mentioned and the
+          same license terms apply. All other content is subject to German
+          copyright.
         </p>
       </Layout>
     )

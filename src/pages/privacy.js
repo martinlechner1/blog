@@ -30,9 +30,10 @@ class NotFoundPage extends React.Component {
           the principle of data minimization.
         </p>
         <h2>Hosting and access log</h2>
-        lechner.work is currently delivered by netlify. The terms of [netlify's
-        stance](https://www.netlify.com/gdpr/) on gdpr apply. I have no access
-        to any data the hoster might collect.
+        lechner.work is currently delivered by netlify. The terms of{" "}
+        <a href="https://www.netlify.com/gdpr/">netlify's stance</a> on gdpr
+        apply. I have no access to any data (e.g. access logs) the hoster might
+        collect.
         <h2>SSL encryption</h2>
         When using https, the data transfer between the web server and your
         browser is encrypted using SSL.
