@@ -15,7 +15,9 @@ Gatsby has a nice tutorial, please [check it out](https://www.gatsbyjs.org/tutor
 I used the node 10 and npm 6 to run the following commands, which kickstart your blog from a template.
 
 ```
-  npx gatsby new blog https://github.com/gatsbyjs/gatsby-starter-blog
+  npx gatsby new blog  
+    https://github.com/gatsbyjs/  
+    gatsby-starter-blog
   cd blog
   npm run develop
 ```
