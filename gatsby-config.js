@@ -3,10 +3,13 @@ module.exports = {
     title: `Functional thinking`,
     author: `Martin Lechner`,
     description: `A blog about functional programming in practice`,
-    siteUrl: `https://blog.lechner.work`,
+    siteUrl: `https://www.lechner.work`,
     social: {
       twitter: `m4nl5r`,
       github: `martinlechner1`,
+      xing: `Martin_Lechner37`,
+      linkedIn: `martin-lechner-01b99056`,
+      flickr: `m4rt1`,
     },
   },
   plugins: [
@@ -60,7 +63,7 @@ module.exports = {
       options: {
         name: `Functional thinking`,
         short_name: `Functional thinking`,
-        start_url: `/`,
+        start_url: `/blog`,
         background_color: `#ffffff`,
         theme_color: `#4B0082`,
         display: `minimal-ui`,

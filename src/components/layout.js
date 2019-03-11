@@ -1,5 +1,5 @@
 import React from "react"
-import { Link, StaticQuery } from "gatsby"
+import { Link, StaticQuery, graphql } from "gatsby"
 import { rhythm } from "../utils/typography"
 import Image from "gatsby-image"
 
@@ -8,7 +8,21 @@ class Layout extends React.Component {
     const { children } = this.props
     let header
 
-    const bioQuery = graphql`
+    const NavLink = props => (
+      <li style={{ marginRight: 16, marginBottom: 0 }}>
+        <a
+          style={{
+            boxShadow: `none`,
+            color: "var(--textNormal)",
+          }}
+          href={props.link}
+        >
+          {props.title}
+        </a>
+      </li>
+    )
+
+    const headerQuery = graphql`
       query HeaderQuery {
         avatar: file(absolutePath: { regex: "/profile-pic.jpg/" }) {
           childImageSharp {
@@ -23,6 +37,9 @@ class Layout extends React.Component {
             social {
               twitter
               github
+              xing
+              linkedIn
+              flickr
             }
           }
         }
@@ -31,7 +48,7 @@ class Layout extends React.Component {
 
     header = (
       <StaticQuery
-        query={bioQuery}
+        query={headerQuery}
         render={data => {
           const { author, social } = data.site.siteMetadata
           return (
@@ -88,53 +105,27 @@ class Layout extends React.Component {
                       marginTop: 10,
                     }}
                   >
-                    <li style={{ marginRight: 16, marginBottom: 0 }}>
-                      <Link
-                        style={{
-                          boxShadow: `none`,
-                          color: "var(--textNormal)",
-                        }}
-                        to={`/blog`}
-                      >
-                        Blog
-                      </Link>
-                    </li>
-                    <li style={{ marginRight: 16, marginBottom: 0 }}>
-                      <a
-                        style={{
-                          boxShadow: `none`,
-                          color: "var(--textNormal)",
-                        }}
-                        href={`https://twitter.com/${social.twitter}`}
-                      >
-                        Twitter
-                      </a>
-                    </li>
-                    <li style={{ marginRight: 16, marginBottom: 0 }}>
-                      <a
-                        style={{
-                          boxShadow: `none`,
-                          color: "var(--textNormal)",
-                        }}
-                        href="https://www.linkedin.com/in/martin-lechner-01b99056"
-                      >
-                        LinkedIn
-                      </a>
-                    </li>
-                    <li style={{ marginRight: 16, marginBottom: 0 }}>
-                      <a
-                        style={{
-                          boxShadow: `none`,
-                          color: "var(--textNormal)",
-                        }}
-                        href="https://www.xing.com/profile/Martin_Lechner37"
-                      >
-                        Xing
-                      </a>
-                    </li>
-                    <li>
-                      <a href={`https://github.com/${social.github}`}>Github</a>
-                    </li>
+                    <NavLink link="/blog" title="Blog" />
+                    <NavLink
+                      link={`https://twitter.com/${social.twitter}`}
+                      title="Twitter"
+                    />
+                    <NavLink
+                      link={`https://www.linkedin.com/in/${social.linkedIn}`}
+                      title="LinkedIn"
+                    />
+                    <NavLink
+                      link={`https://www.xing.com/profile/${social.xing}`}
+                      title="Xing"
+                    />
+                    <NavLink
+                      link={`https://github.com/${social.github}`}
+                      title="Github"
+                    />
+                    <NavLink
+                      link={`https://www.flickr.com/photos/${social.flickr}`}
+                      title="Flickr"
+                    />
                   </ul>
                 </nav>
               </div>
@@ -142,6 +133,26 @@ class Layout extends React.Component {
           )
         }}
       />
+    )
+
+    const footer = (
+      <footer>
+        <Link style={{ color: `var(--textLink)` }} to={"/blog"}>
+          Blog
+        </Link>
+        {` • `}
+        <a style={{ color: `var(--textLink)` }} href="/rss.xml">
+          RSS Feed
+        </a>{" "}
+        {` • `}
+        <Link style={{ color: `var(--textLink)` }} to={"/legal"}>
+          Legal notice
+        </Link>
+        {` • `}
+        <Link style={{ color: `var(--textLink)` }} to={"/privacy"}>
+          Privacy
+        </Link>
+      </footer>
     )
 
     return (
@@ -156,37 +167,7 @@ class Layout extends React.Component {
       >
         <header>{header}</header>
         <main>{children}</main>
-        <footer>
-          <Link style={{ color: `var(--textLink)` }} to={"/blog"}>
-            Blog
-          </Link>
-          {` • `}
-          <a
-            style={{ color: `var(--textLink)` }}
-            href={`https://twitter.com/m4nl5r`}
-          >
-            Twitter
-          </a>
-          {` • `}
-          <a
-            style={{ color: `var(--textLink)` }}
-            href={`https://github.com/martinlechner1`}
-          >
-            Github
-          </a>
-          {` • `}
-          <a style={{ color: `var(--textLink)` }} href="/rss.xml">
-            RSS Feed
-          </a>{" "}
-          {` • `}
-          <Link style={{ color: `var(--textLink)` }} to={"/legal"}>
-            Legal notice
-          </Link>
-          {` • `}
-          <Link style={{ color: `var(--textLink)` }} to={"/privacy"}>
-            Privacy
-          </Link>
-        </footer>
+        {footer}
       </div>
     )
   }
