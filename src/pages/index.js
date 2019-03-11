@@ -1,46 +1,55 @@
 import React from "react"
-import { Link, graphql } from "gatsby"
+import { graphql } from "gatsby"
 
-import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { rhythm } from "../utils/typography"
 
 class BlogIndex extends React.Component {
   render() {
     const { data } = this.props
     const siteTitle = data.site.siteMetadata.title
-    const posts = data.allMarkdownRemark.edges
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
         <SEO
-          title="All posts"
-          keywords={[`blog`, `gatsby`, `javascript`, `react`]}
+          title="Martin Lechner"
+          keywords={[`portfolio`, `scala`, `blog`, `react`]}
         />
-        <Bio />
-        {posts.map(({ node }) => {
-          const title = node.frontmatter.title || node.fields.slug
-          return (
-            <div key={node.fields.slug}>
-              <h3
-                style={{
-                  marginBottom: rhythm(1 / 4),
-                }}
-              >
-                <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
-                  {title}
-                </Link>
-              </h3>
-              <small>{node.frontmatter.date}</small>
-              <p
-                dangerouslySetInnerHTML={{
-                  __html: node.frontmatter.description || node.excerpt,
-                }}
-              />
-            </div>
-          )
-        })}
+        <h2>Hi, my name is Martin,</h2>
+        <p>
+          functional programming advocate and full stack engineer at{" "}
+          <strong>Autoscout24</strong>. I love crafting clean code and launching
+          innovative data products. My toolbox includes Scala, Node, React and
+          AWS.
+        </p>
+        <p>
+          I've been addicted to programming since school, launching my first
+          bigger webapp while studying at <strong>Helmholtz-Zentrum</strong> to
+          visualize biological networks. After a year at{" "}
+          <strong>Telefonica Germany</strong> moving data around and analyzing
+          the data warehouse, I started my first full time job at{" "}
+          <strong>Jambit</strong>, a munich based software consultancy. Working
+          on many different projects with good people helped my learn quite a
+          lot in the time being there.
+        </p>
+        <p>
+          When looking for a new challenge, I stumbled upon{" "}
+          <strong>Autoscout24</strong>, which impressed me with their tech stack
+          and full dev-ops driven approach. Being new to this mindset led to a
+          steep learning curve, picking up{" "}
+          <a
+            style={{
+              boxShadow: `none`,
+              textDecoration: `none`,
+              color: "var(--textLink)",
+            }}
+            href="https://medium.com/scout24-engineering/what-i-learned-in-my-first-year-at-autoscout24-57266cd3246b"
+          >
+            many things in my first year.
+          </a>{" "}
+          Currently I'm driving functional programming adoption with Cats and
+          building ai driven data products.
+        </p>
       </Layout>
     )
   }
