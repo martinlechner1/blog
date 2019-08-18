@@ -106,6 +106,8 @@ class Layout extends React.Component {
                     }}
                   >
                     <NavLink link="/blog" title="Blog" />
+                    <NavLink link="/talks" title="Talks" />
+                    <NavLink link="/books" title="Books" />
                     <NavLink
                       link={`https://twitter.com/${social.twitter}`}
                       title="Twitter"

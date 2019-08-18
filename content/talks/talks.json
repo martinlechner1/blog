@@ -1,0 +1,32 @@
+{
+  "talks": [
+    {
+      "title": "Introduction to React hooks",
+      "link": "https://martinlechner1.github.io/react-hooks-talk/"
+    },
+    {
+      "title": "Lightning talk: Sttp",
+      "link": "https://github.com/martinlechner1/sttp-talk"
+    },
+    {
+      "title": "Lightning talk: Lenses",
+      "link": "https://github.com/martinlechner1/lightning-talk-lenses"
+    },
+    {
+      "title": "Lightning talk: Typeclasses",
+      "link": "https://github.com/martinlechner1/typeclasses-lightning-talk"
+    },
+    {
+      "title": "Lightining talk: Monoids",
+      "link": "https://github.com/martinlechner1/monoids-talk"
+    },
+    {
+      "title": "Lightning talk: Refined",
+      "link": "https://github.com/martinlechner1/refined-lightning-talk"
+    },
+    {
+      "title": "React Quickstart",
+      "link": "https://github.com/martinlechner1/react-quickstart-talk"
+    }
+  ]
+}

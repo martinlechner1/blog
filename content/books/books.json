@@ -1,0 +1,20 @@
+{
+  "books": [
+    {
+      "title": "Crucial Conversations",
+      "text": "Do you wonder how to improve your communication skills? Don't look further. This can help you navigate in critical and hard conversations."
+    },
+    {
+      "title": "The Coaching habit",
+      "text": "Is teaching others part of your job? It explains nicely how you can teach by asking certain questions."
+    },
+    {
+      "title": "Radical Candor",
+      "text": "While it's mostly focussed for team leaders, one can get many things out of it. Most prominent is giving honest feedback. There are many other good ideas in this book, I can highly recommend it."
+    },
+    {
+      "title": "To Be continued",
+      "text": ""
+    }
+  ]
+}
