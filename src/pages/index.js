@@ -18,9 +18,9 @@ class BlogIndex extends React.Component {
         <h2>Hi, my name is Martin,</h2>
         <p>
           functional programming advocate and full stack engineer at{" "}
-          <strong>Autoscout24</strong>. I love crafting clean code and launching
-          innovative data products. My toolbox includes Scala, Node, React and
-          AWS.
+          <strong>Autoscout24</strong>. I love crafting clean code, building
+          great teams, coaching other folks and building data driven products.
+          My tech toolbox includes Scala, Typescript, Node, React and AWS.
         </p>
         <p>
           I've been addicted to programming since school, launching my first
@@ -47,8 +47,9 @@ class BlogIndex extends React.Component {
           >
             many things in my first year.
           </a>{" "}
-          Currently I'm driving functional programming adoption with Cats and
-          building ai driven data products.
+          Currently I'm driving functional programming adoption with the
+          typelevel ecosystem, building ai driven data products and coaching
+          other developers.
         </p>
       </Layout>
     )
