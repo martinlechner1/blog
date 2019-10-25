@@ -17,8 +17,8 @@ class ReadingList extends React.Component {
         <p>This page displays a collection of books I quite enjoyed reading:</p>
         <ul style={{ listStyle: "none", marginLeft: 0 }}>
           {books.map(book => (
-            <li key={book.title}>
-              <h3>{book.title}</h3>
+            <li key={book.title} style={{ paddingBottom: "1rem" }}>
+              <h3 style={{ marginBottom: "0.5rem" }}>{book.title}</h3>
               <p>{book.text}</p>
             </li>
           ))}
