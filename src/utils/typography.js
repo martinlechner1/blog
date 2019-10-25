@@ -1,5 +1,5 @@
 import Typography from "typography"
-import Theme from "typography-theme-irving"
+import Theme from "typography-theme-alton"
 import "./globals.css"
 
 Theme.overrideThemeStyles = () => {
