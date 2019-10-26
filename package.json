@@ -58,7 +58,8 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\"",
-    "postinstall": "netlify-lambda install",
-    "build:lambda": "netlify-lambda build src/lambda"
+    "postinstall": "netlify-lambda install src/lambda",
+    "build:lambda": "netlify-lambda build src/lambda",
+    "serve:lambda": "netlify-lambda serve src/lambda"
   }
 }
