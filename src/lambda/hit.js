@@ -2,8 +2,8 @@ const DynamoDB = require("aws-sdk").DynamoDB
 
 const dynamoDB = new DynamoDB({
   region: "eu-west-1",
-  accessKeyId: process.env.AWS_KEY,
-  secretAccessKey: process.env.AWS_SECRET_KEY,
+  accessKeyId: process.env.KEY_ID,
+  secretAccessKey: process.env.SECRECT_ACCESS_KEY,
 })
 
 exports.handler = async (event, context) => {
