@@ -1,9 +1,13 @@
 const DynamoDB = require("aws-sdk").DynamoDB
 
-const dynamoDB = new DynamoDB({ region: "eu-west-1" })
+const dynamoDB = new DynamoDB({
+  region: "eu-west-1",
+  accessKeyId: process.env.AWS_KEY,
+  secretAccessKey: process.env.AWS_SECRET_KEY,
+})
 
 exports.handler = async (event, context) => {
-  const result = await dynamoDB
+  await dynamoDB
     .updateItem({
       ExpressionAttributeNames: {
         "#CT": "count",
@@ -15,7 +19,7 @@ exports.handler = async (event, context) => {
       },
       Key: {
         page: {
-          S: "test",
+          S: event.queryStringParameters.page,
         },
         date: {
           S: new Date().toISOString().slice(0, 10),
