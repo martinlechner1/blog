@@ -8,10 +8,13 @@ import { rhythm, scale } from "../utils/typography"
 import { useTracking } from "../tracking/tracking"
 
 const BlogPostTemplate = props => {
+  console.log(props)
   const post = props.data.markdownRemark
   const siteTitle = props.data.site.siteMetadata.title
   const { previous, next } = props.pageContext
-  useTracking(post.fields.slug)
+  const slug =
+    post && post.fields && post.fields.slug ? post.fields.slug : "no-slug"
+  useTracking(slug)
 
   return (
     <Layout location={props.location} title={siteTitle}>
