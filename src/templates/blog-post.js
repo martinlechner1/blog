@@ -6,9 +6,9 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm, scale } from "../utils/typography"
 import { useTracking } from "../tracking/tracking"
+require("prismjs/themes/prism-solarizedlight.css")
 
 const BlogPostTemplate = props => {
-  console.log(props)
   const post = props.data.markdownRemark
   const siteTitle = props.data.site.siteMetadata.title
   const { previous, next } = props.pageContext
