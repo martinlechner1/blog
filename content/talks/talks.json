@@ -1,6 +1,10 @@
 {
   "talks": [
     {
+      "title": "Introduction to React hooks (video)",
+      "link": "https://www.youtube.com/watch?v=Dt-1VBK9QKU&feature=youtu.be"
+    },
+    {
       "title": "Introduction to React hooks",
       "link": "https://martinlechner1.github.io/react-hooks-talk/"
     },

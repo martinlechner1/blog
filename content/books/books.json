@@ -26,7 +26,27 @@
     },
     {
       "title": "Better Allies",
-      "text": "I care a lot about diversity. This book helped me picking up some inspiration to be more inclusive."
+      "text": "I care a lot about diversity. This book helped me picking up some inspiration and concrete action items to be more inclusive."
+    },
+    {
+      "title": "Designing Data-Intensive Applications",
+      "text": "Already a classic. Explains to a very detailed level how to design data intensive systems. This has to potential to bring you from zero to hero."
+    },
+    {
+      "title": "Functional Programming in Scala",
+      "text": "The famous red book. Very useful primer to get you started with advanced functional programming in Scala"
+    },
+    {
+      "title": "The pragmatic programmer",
+      "text": "This was recently re-released. The old version was the most important programming book I've ever read. Picked up many good ideas / insights on how to self-improve as programmer."
+    },
+    {
+      "title": "Advanced Scala with Cats",
+      "text": "Free ebook by Underscore.io. It is a perfect primer on how to apply Cats to make your Scala code better"
+    },
+    {
+      "title": "Functional Programming for Mortals",
+      "text": "I liked reading this after Advanced Scala with Cats. It showed me how to structure applications and re-enforced some ideas."
     },
     {
       "title": "To Be continued",
