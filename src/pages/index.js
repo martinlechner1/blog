@@ -14,11 +14,12 @@ const BlogIndex = props => {
     <Layout location={props.location} title={siteTitle}>
       <SEO
         title="Martin Lechner"
-        keywords={[`portfolio`, `scala`, `blog`, `react`]}
+        keywords={[`portfolio`, `scala`, `blog`, `react`,`developer experience` ]}
       />
       <h2>Hi, my name is Martin,</h2>
-     <p>I work on developer experience at Personio and care a lot about people, tech and good coffee.
+     <p>I work on developer experience at Personio and care a lot about people, tech, photography and good coffee.
           </p>
+          <p>Previously at Twitter 1.0, Autoscout24 and Jambit</p>
           </Layout>
   )
 }
