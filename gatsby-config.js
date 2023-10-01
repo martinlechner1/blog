@@ -9,7 +9,7 @@ module.exports = {
       github: `martinlechner1`,
       xing: `Martin_Lechner37`,
       linkedIn: `martin-lechner-01b99056`,
-      flickr: `m4rt1`,
+      flickr: `mart1ammersee`,
     },
   },
   plugins: [
@@ -70,8 +70,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Functional thinking`,
-        short_name: `Functional thinking`,
+        name: `Martins thoughts`,
+        short_name: `Blog`,
         start_url: `/blog`,
         background_color: `#ffffff`,
         theme_color: `#4B0082`,
