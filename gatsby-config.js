@@ -9,7 +9,7 @@ module.exports = {
       github: `martinlechner1`,
       xing: `Martin_Lechner37`,
       linkedIn: `martin-lechner-01b99056`,
-      flickr: `mart1ammersee`,
+      flickr: `m4rt1`,
     },
   },
   plugins: [
