@@ -1,0 +1,76 @@
+[
+  {
+    "title": "Introduction to React Hooks",
+    "kind": "Talk",
+    "links": [
+      {
+        "label": "Video",
+        "url": "https://www.youtube.com/watch?v=Dt-1VBK9QKU"
+      },
+      {
+        "label": "Slides",
+        "url": "https://martinlechner1.github.io/react-hooks-talk/"
+      }
+    ]
+  },
+  {
+    "title": "Sttp",
+    "kind": "Lightning talk",
+    "links": [
+      {
+        "label": "Slides & code",
+        "url": "https://github.com/martinlechner1/sttp-talk"
+      }
+    ]
+  },
+  {
+    "title": "Lenses",
+    "kind": "Lightning talk",
+    "links": [
+      {
+        "label": "Slides & code",
+        "url": "https://github.com/martinlechner1/lightning-talk-lenses"
+      }
+    ]
+  },
+  {
+    "title": "Typeclasses",
+    "kind": "Lightning talk",
+    "links": [
+      {
+        "label": "Slides & code",
+        "url": "https://github.com/martinlechner1/typeclasses-lightning-talk"
+      }
+    ]
+  },
+  {
+    "title": "Monoids",
+    "kind": "Lightning talk",
+    "links": [
+      {
+        "label": "Slides & code",
+        "url": "https://github.com/martinlechner1/monoids-talk"
+      }
+    ]
+  },
+  {
+    "title": "Refined",
+    "kind": "Lightning talk",
+    "links": [
+      {
+        "label": "Slides & code",
+        "url": "https://github.com/martinlechner1/refined-lightning-talk"
+      }
+    ]
+  },
+  {
+    "title": "React Quickstart",
+    "kind": "Talk",
+    "links": [
+      {
+        "label": "Slides & code",
+        "url": "https://github.com/martinlechner1/react-quickstart-talk"
+      }
+    ]
+  }
+]

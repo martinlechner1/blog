@@ -1,8 +1,27 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
 [build.environment]
-  NODE_VERSION = "12"
-  YARN_VERSION = "1.2.1"
-  YARN_FLAGS = "--pure-lockfile --verbose"
-[build]  
-  functions = "lambda"
-  publish = "public"
-  command = "yarn build"
+  NODE_VERSION = "24"
+
+# Blog posts used to live at the site root
+[[redirects]]
+  from = "/coffee/*"
+  to = "/blog/coffee/"
+  status = 301
+
+[[redirects]]
+  from = "/deploy-blog/*"
+  to = "/blog/deploy-blog/"
+  status = 301
+
+[[redirects]]
+  from = "/lambda-world-2019/*"
+  to = "/blog/lambda-world-2019/"
+  status = 301
+
+[[redirects]]
+  from = "/tracking/*"
+  to = "/blog/tracking/"
+  status = 301

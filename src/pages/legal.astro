@@ -1,0 +1,27 @@
+---
+import Base from "../layouts/Base.astro"
+import { SITE } from "../site"
+---
+
+<Base title="Legal notice">
+  <h1>Legal notice</h1>
+  <div class="prose">
+    <p>
+      Responsible in accordance with § 5 DDG and § 18 MStV:<br />
+      Martin Lechner<br />
+      Klosterstrasse 6d<br />
+      82284 Grafrath, Germany<br />
+      <a href={`mailto:${SITE.email}`}>{SITE.email}</a>
+    </p>
+    <p>This is a private, non-commercial website.</p>
+
+    <h2>Copyright</h2>
+    <p>
+      All content on this website is, unless stated otherwise, subject to the
+      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">BY-NC-SA license</a>.
+      The content may therefore be copied and redistributed at any time for
+      non-commercial purposes, provided my name is mentioned and the same license
+      terms apply. All other content is subject to German copyright.
+    </p>
+  </div>
+</Base>

@@ -1,0 +1,73 @@
+---
+import { getCollection } from "astro:content"
+import Base from "../layouts/Base.astro"
+
+const books = (await getCollection("books")).sort((a, b) => a.data.order - b.data.order)
+const categories = ["People & leadership", "Engineering"] as const
+---
+
+<Base title="Books" description="Books Martin Lechner enjoyed reading, with a short review of each.">
+  <h1>Books</h1>
+  <p class="lede">A collection of books I quite enjoyed reading, each with a few words on why.</p>
+
+  {
+    categories.map(category => (
+      <section>
+        <h2 class="eyebrow">{category}</h2>
+        <div class="books">
+          {books
+            .filter(book => book.data.category === category)
+            .map(({ data }) => (
+              <article class="book">
+                <h3>{data.title}</h3>
+                <p class="author">{data.author}</p>
+                <p class="review">{data.text}</p>
+              </article>
+            ))}
+        </div>
+      </section>
+    ))
+  }
+</Base>
+
+<style>
+  section + section {
+    margin-top: 3.5rem;
+  }
+
+  .eyebrow {
+    margin: 0 0 1rem;
+  }
+
+  .books {
+    display: grid;
+    gap: 1rem;
+  }
+
+  .book {
+    padding: 1.4rem 1.5rem;
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent);
+    border-radius: 4px 10px 10px 4px;
+    background: var(--bg-subtle);
+  }
+
+  .book h3 {
+    font-family: var(--font-serif);
+    font-size: 1.3rem;
+    letter-spacing: 0;
+    margin: 0;
+  }
+
+  .author {
+    margin: 0.15rem 0 0.75rem;
+    font-size: 0.875rem;
+    color: var(--text-muted);
+  }
+
+  .review {
+    margin: 0;
+    font-family: var(--font-serif);
+    font-size: 1.0625rem;
+  }
+</style>
