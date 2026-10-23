@@ -26,4 +26,10 @@ In 2019 I built [serverless tracking on a budget](/blog/tracking/) with Netlify 
 
 Posts used to live at the site root, for example `/coffee/`. They now live under `/blog/`, and Netlify redirects the old URLs, so existing links keep working.
 
-The whole migration happened in a single session, with [Claude Code](https://claude.com/claude-code) doing most of the heavy lifting.
+## Built entirely from my phone
+
+The fun part: I didn't touch a laptop for any of this. [Claude Code](https://claude.com/claude-code) runs on `mini`, a small home server, and I drove the whole session from my phone using Claude Code's Remote Control. I described what I wanted, and Claude cloned the repo, set up asdf and Node, did the migration and committed the result on a branch.
+
+To see the result, the Astro dev server listens on the server's [Tailscale](https://tailscale.com) address. My phone is on the same tailnet, so I could open the site under `mini`'s MagicDNS name and watch every change hot-reload, without exposing anything to the local network or the internet. Reviewing the design on a phone screen first also turned out to be a nice forcing function for a mobile-first layout.
+
+The whole migration happened in a single session, mobile first in the most literal sense.
