@@ -1,0 +1,81 @@
+---
+import "../styles/global.css"
+import { SITE, SOCIAL } from "../site"
+
+interface Props {
+  title?: string
+  description?: string
+}
+
+const { title, description = SITE.description } = Astro.props
+const pageTitle = title ? `${title} · ${SITE.title}` : SITE.title
+const canonical = new URL(Astro.url.pathname, Astro.site)
+
+const nav = [
+  { href: "/blog/", label: "Writing" },
+  { href: "/talks/", label: "Talks" },
+  { href: "/books/", label: "Books" },
+]
+const isActive = (href: string) => Astro.url.pathname.startsWith(href)
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/favicon.ico" sizes="32x32" />
+    <link rel="alternate" type="application/rss+xml" title={SITE.title} href="/rss.xml" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#111318" media="(prefers-color-scheme: dark)" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title ?? SITE.title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta name="twitter:card" content="summary" />
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="wordmark" href="/">{SITE.name}</a>
+        <nav aria-label="Main">
+          <ul>
+            {
+              nav.map(({ href, label }) => (
+                <li>
+                  <a href={href} aria-current={isActive(href) ? "page" : undefined}>
+                    {label}
+                  </a>
+                </li>
+              ))
+            }
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" class="container">
+      <slot />
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>© {new Date().getFullYear()} {SITE.name}</p>
+        <ul>
+          <li><a href={SOCIAL.linkedIn}>LinkedIn</a></li>
+          <li><a href={SOCIAL.github}>GitHub</a></li>
+          <li><a href={SOCIAL.flickr}>Flickr</a></li>
+          <li><a href="/rss.xml">RSS</a></li>
+          <li><a href="/legal/">Legal notice</a></li>
+          <li><a href="/privacy/">Privacy</a></li>
+        </ul>
+      </div>
+    </footer>
+  </body>
+</html>

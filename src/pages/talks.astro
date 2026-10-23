@@ -1,0 +1,39 @@
+---
+import { getCollection } from "astro:content"
+import Base from "../layouts/Base.astro"
+
+const talks = (await getCollection("talks")).sort((a, b) => a.data.order - b.data.order)
+---
+
+<Base title="Talks" description="Talks and lightning talks by Martin Lechner on React, Scala and functional programming.">
+  <h1>Talks</h1>
+  <p class="lede">Talks and lightning talks, mostly on React, Scala and functional programming.</p>
+  <ul class="entries">
+    {
+      talks.map(({ data }) => (
+        <li>
+          <h3>{data.title}</h3>
+          <p class="links">
+            <span class="meta">{data.kind}</span>
+            {data.links.map(link => (
+              <a href={link.url}>{link.label}</a>
+            ))}
+          </p>
+        </li>
+      ))
+    }
+  </ul>
+</Base>
+
+<style>
+  .links {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.25rem 1rem;
+  }
+
+  .links a {
+    font-size: 0.9375rem;
+  }
+</style>

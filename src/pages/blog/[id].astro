@@ -1,0 +1,134 @@
+---
+import type { GetStaticPaths } from "astro"
+import { getCollection, render } from "astro:content"
+import { Image } from "astro:assets"
+import Base from "../../layouts/Base.astro"
+import profilePic from "../../assets/profile-pic.jpg"
+import { formatDate, SOCIAL } from "../../site"
+
+export const getStaticPaths = (async () => {
+  const posts = (await getCollection("blog")).sort(
+    (a, b) => a.data.date.valueOf() - b.data.date.valueOf()
+  )
+  return posts.map((post, i) => ({
+    params: { id: post.id },
+    props: { post, previous: posts[i - 1], next: posts[i + 1] },
+  }))
+}) satisfies GetStaticPaths
+
+const { post, previous, next } = Astro.props
+const { Content } = await render(post)
+---
+
+<Base title={post.data.title} description={post.data.description}>
+  <article>
+    <header class="post-header">
+      <a class="back" href="/blog/">← Writing</a>
+      <h1>{post.data.title}</h1>
+      <time class="meta" datetime={post.data.date.toISOString()}>
+        {formatDate(post.data.date)}
+      </time>
+    </header>
+    <div class="prose">
+      <Content />
+    </div>
+  </article>
+
+  <aside class="author">
+    <Image src={profilePic} alt="" width={48} height={48} densities={[1, 2]} />
+    <p>
+      Written by <a href="/">Martin Lechner</a>, who works on developer
+      experience at Personio. Find him on <a href={SOCIAL.linkedIn}>LinkedIn</a>.
+    </p>
+  </aside>
+
+  <nav class="pager" aria-label="More posts">
+    {
+      previous ? (
+        <a href={`/blog/${previous.id}/`} rel="prev">
+          <span class="meta">Older</span>
+          {previous.data.title}
+        </a>
+      ) : (
+        <span />
+      )
+    }
+    {
+      next && (
+        <a href={`/blog/${next.id}/`} rel="next" class="next">
+          <span class="meta">Newer</span>
+          {next.data.title}
+        </a>
+      )
+    }
+  </nav>
+</Base>
+
+<style>
+  .post-header {
+    margin-bottom: 2.5rem;
+  }
+
+  .back {
+    display: inline-block;
+    font-size: 0.9375rem;
+    text-decoration: none;
+    margin-bottom: 1.5rem;
+  }
+
+  .author {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 3.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+    font-size: 0.9375rem;
+    color: var(--text-muted);
+  }
+
+  .author img {
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .author p {
+    margin: 0;
+  }
+
+  .pager {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+
+  .pager a {
+    display: grid;
+    gap: 0.15rem;
+    padding: 1rem 1.1rem;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    color: var(--text);
+    text-decoration: none;
+    font-weight: 550;
+  }
+
+  .pager a:hover {
+    border-color: var(--accent);
+  }
+
+  .pager .next {
+    text-align: right;
+    grid-column: 2;
+  }
+
+  @media (max-width: 30rem) {
+    .pager {
+      grid-template-columns: 1fr;
+    }
+    .pager .next {
+      grid-column: 1;
+    }
+  }
+</style>

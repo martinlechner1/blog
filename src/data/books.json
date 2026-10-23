@@ -1,0 +1,74 @@
+[
+  {
+    "title": "Crucial Conversations",
+    "author": "Kerry Patterson, Joseph Grenny, Ron McMillan, Al Switzler",
+    "category": "People & leadership",
+    "text": "Do you wonder how to improve your communication skills? Don't look further. This can help you navigate in critical and hard conversations. If you want to read one book about soft skills, this is it!"
+  },
+  {
+    "title": "The Coaching Habit",
+    "author": "Michael Bungay Stanier",
+    "category": "People & leadership",
+    "text": "Is teaching others part of your job? It explains nicely how you can teach by asking certain questions."
+  },
+  {
+    "title": "Radical Candor",
+    "author": "Kim Scott",
+    "category": "People & leadership",
+    "text": "While it's mostly focussed for team leaders, one can get many things out of it. Most prominent is giving honest feedback. There are many other good ideas in this book, I can highly recommend it."
+  },
+  {
+    "title": "Drive",
+    "author": "Daniel H. Pink",
+    "category": "People & leadership",
+    "text": "THE book about motivation. The author names the three elements: Purpose, Autonomy and Mastery to be the key for great motivation."
+  },
+  {
+    "title": "The Five Dysfunctions of a Team (Comic Book Edition)",
+    "author": "Patrick Lencioni",
+    "category": "People & leadership",
+    "text": "If you feel that something is not right in your team, you might take a glimpse into this one."
+  },
+  {
+    "title": "Start with Why",
+    "author": "Simon Sinek",
+    "category": "People & leadership",
+    "text": "This book could be much shorter, but still contains some very powerful and valuable concepts."
+  },
+  {
+    "title": "Better Allies",
+    "author": "Karen Catlin",
+    "category": "People & leadership",
+    "text": "I care a lot about diversity. This book helped me picking up some inspiration and concrete action items to be more inclusive."
+  },
+  {
+    "title": "Designing Data-Intensive Applications",
+    "author": "Martin Kleppmann",
+    "category": "Engineering",
+    "text": "Already a classic. Explains to a very detailed level how to design data intensive systems. This has to potential to bring you from zero to hero."
+  },
+  {
+    "title": "Functional Programming in Scala",
+    "author": "Paul Chiusano, Rúnar Bjarnason",
+    "category": "Engineering",
+    "text": "The famous red book. Very useful primer to get you started with advanced functional programming in Scala"
+  },
+  {
+    "title": "The Pragmatic Programmer",
+    "author": "David Thomas, Andrew Hunt",
+    "category": "Engineering",
+    "text": "This was recently re-released. The old version was the most important programming book I've ever read. Picked up many good ideas / insights on how to self-improve as programmer."
+  },
+  {
+    "title": "Advanced Scala with Cats",
+    "author": "Noel Welsh, Dave Gurnell",
+    "category": "Engineering",
+    "text": "Free ebook by Underscore.io. It is a perfect primer on how to apply Cats to make your Scala code better"
+  },
+  {
+    "title": "Functional Programming for Mortals",
+    "author": "Sam Halliday",
+    "category": "Engineering",
+    "text": "I liked reading this after Advanced Scala with Cats. It showed me how to structure applications and re-enforced some ideas."
+  }
+]
