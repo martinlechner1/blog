@@ -17,21 +17,14 @@ const blog = defineCollection({
 })
 
 const books = defineCollection({
-  loader: file("./src/data/books.json", {
-    parser: text =>
-      JSON.parse(text).map((book: { title: string }, order: number) => ({
-        id: book.title,
-        order,
-        ...book,
-      })),
-  }),
+  // One review per file, the body is the review text
+  loader: glob({ pattern: "*.md", base: "./src/content/books" }),
   schema: z.object({
-    // Position in the JSON file, collections are otherwise sorted by id
-    order: z.number(),
     title: z.string(),
     author: z.string(),
     category: z.enum(["People & leadership", "Engineering"]),
-    text: z.string(),
+    // When the review was added, newest reviews are listed first
+    date: z.coerce.date(),
   }),
 })
 

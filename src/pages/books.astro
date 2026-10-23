@@ -1,8 +1,12 @@
 ---
-import { getCollection } from "astro:content"
+import { getCollection, render } from "astro:content"
 import Base from "../layouts/Base.astro"
 
-const books = (await getCollection("books")).sort((a, b) => a.data.order - b.data.order)
+const books = await Promise.all(
+  (await getCollection("books"))
+    .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf() || a.data.title.localeCompare(b.data.title))
+    .map(async book => ({ ...book, Content: (await render(book)).Content }))
+)
 const categories = ["People & leadership", "Engineering"] as const
 ---
 
@@ -17,11 +21,13 @@ const categories = ["People & leadership", "Engineering"] as const
         <div class="books">
           {books
             .filter(book => book.data.category === category)
-            .map(({ data }) => (
+            .map(({ data, Content }) => (
               <article class="book">
                 <h3>{data.title}</h3>
                 <p class="author">{data.author}</p>
-                <p class="review">{data.text}</p>
+                <div class="review">
+                  <Content />
+                </div>
               </article>
             ))}
         </div>
@@ -66,8 +72,11 @@ const categories = ["People & leadership", "Engineering"] as const
   }
 
   .review {
-    margin: 0;
     font-family: var(--font-serif);
     font-size: 1.0625rem;
+  }
+
+  .review > :global(:last-child) {
+    margin-bottom: 0;
   }
 </style>
