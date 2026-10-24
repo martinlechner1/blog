@@ -5,4 +5,4 @@ category: Engineering
 date: 2019-11-10
 ---
 
-I liked reading this after Advanced Scala with Cats. It showed me how to structure applications and re-enforced some ideas.
+I liked reading this after Advanced Scala with Cats. It showed me how to structure applications and reinforced some ideas.

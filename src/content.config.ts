@@ -25,6 +25,8 @@ const books = defineCollection({
     category: z.enum(["People & leadership", "Engineering"]),
     // When the review was added, newest reviews are listed first
     date: z.coerce.date(),
+    // Drafts are kept in the repo but not shown on the site
+    draft: z.boolean().default(false),
   }),
 })
 

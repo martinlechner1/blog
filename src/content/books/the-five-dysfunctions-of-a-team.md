@@ -5,4 +5,4 @@ category: People & leadership
 date: 2019-10-25
 ---
 
-If you feel that something is not right in your team, you might take a glimpse into this one.
+If you feel that something is not right in your team, you might take a look at this one.
