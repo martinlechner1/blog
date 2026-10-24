@@ -5,4 +5,4 @@ category: Engineering
 date: 2019-11-10
 ---
 
-This was recently re-released. The old version was the most important programming book I've ever read. Picked up many good ideas / insights on how to self-improve as programmer.
+This was recently re-released. The old version was the most important programming book I've ever read. Picked up many good ideas and insights on how to improve as a programmer.

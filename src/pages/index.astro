@@ -12,7 +12,7 @@ const posts = (await getCollection("blog"))
 const talks = (await getCollection("talks"))
   .sort((a, b) => a.data.order - b.data.order)
   .slice(0, 3)
-const bookCount = (await getCollection("books")).length
+const bookCount = (await getCollection("books", book => !book.data.draft)).length
 ---
 
 <Base>
