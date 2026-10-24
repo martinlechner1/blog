@@ -12,7 +12,9 @@
     "build": "astro check && astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "lint:prose": "node scripts/lint-prose.js"
+    "lint:prose": "node scripts/lint-prose.js",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
   },
   "dependencies": {
     "@astrojs/rss": "^4.0.19",
@@ -22,6 +24,8 @@
   "devDependencies": {
     "@astrojs/check": "^0.9.12",
     "harper.js": "^2.13.0",
+    "prettier": "3.9.10",
+    "prettier-plugin-astro": "1.1.2",
     "typescript": "^6.0.3"
   }
 }
