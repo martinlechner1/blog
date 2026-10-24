@@ -41,7 +41,9 @@ for (const file of files.sort()) {
     if (dictionary.includes(lint.get_problem_text())) continue
     const suggestions = lint.suggestions().map(s => `"${s.get_replacement_text()}"`)
     const hint = suggestions.length > 0 ? ` (try ${suggestions.slice(0, 3).join(", ")})` : ""
-    console.log(`${file}:${position(text, lint.span().start)} ${lint.lint_kind_pretty()}: ${lint.message()}${hint}`)
+    console.log(
+      `${file}:${position(text, lint.span().start)} ${lint.lint_kind_pretty()}: ${lint.message()}${hint}`
+    )
     problems++
   }
 }

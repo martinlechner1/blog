@@ -6,7 +6,7 @@ description: A journey through speciality coffee
 
 After nerding out on coffee in 2020 due to being in a remote setting for most of the year, I decided to put together this guide based on my experiences and taste. It is completely subjective and you might like other flavours than I do. In fact the coffee taste is even different between me and my wife.
 
-![My shelf](./shelf.jpg 'My shelf')
+![My shelf](./shelf.jpg "My shelf")
 
 ## Ingredients
 
@@ -43,7 +43,7 @@ If you want to start out on a budget: Get a Timemore C1 hand grinder. It's value
 
 If you aim for the top end commercial grade grinders such as the Mahlkönig EK43 pop up. They usually focus on speed, which is required in a well running cafe.
 
-![Comandante C40](./commandante.jpg 'Comandante C40')
+![Comandante C40](./commandante.jpg "Comandante C40")
 
 ### Scale
 
@@ -60,7 +60,7 @@ There are a lot of discussions around on how to store coffee. What seems to be n
 You should always store the beans, not ground coffee. Freezing and similar things don't seem to be necessary.
 
 Here you can see the Timemore Black Mirror Scale + Fellow Stagg EKG in the front and the Fellow vacuum container in the back
-![My brew equipment](./stagg.jpg 'My brew equipment')
+![My brew equipment](./stagg.jpg "My brew equipment")
 
 ## Brew Methods
 
@@ -96,7 +96,7 @@ My recipe
 - Stir it and put the plunger with the metal mesh on top, but don’t press down yet
 - Wait another 4 minutes for the particles to settle down, then gently push down the plunger without creating turbulence
 
-![French Press](./frenchpress.jpg 'French Press')
+![French Press](./frenchpress.jpg "French Press")
 
 ### Clever Coffee Dripper / Hario Switch
 
@@ -112,7 +112,7 @@ My recipe for the Switch
 - stir 15 seconds
 - open switch
 
-![Hario Switch](./harioswitch.jpg 'Hario Switch')
+![Hario Switch](./harioswitch.jpg "Hario Switch")
 
 ### Aeropress
 
@@ -130,7 +130,7 @@ This one produces magic cups more often than not, but uses a lot of coffee per c
 The linked page is full of good recipes which allow for a lot of experiments.
 The Aeropress is also super convenient for travelling due to small size and plastic build which is hard to break.
 
-![Aeropress](./aeropress.jpg 'Aeropress')
+![Aeropress](./aeropress.jpg "Aeropress")
 
 ### Hario V60
 
@@ -151,7 +151,7 @@ Recipe
 - Give it a quick stir and let it draw down
 - Once finished stir the coffee in the cup
 
-![Hario V60](./hariov60.jpg 'Hario V60')
+![Hario V60](./hariov60.jpg "Hario V60")
 
 ### Kalita Wave 155
 
@@ -170,14 +170,14 @@ My recipe (adapted from <https://www.georgehowellcoffee.com/brew-guide/kalita-18
 - wait 15 seconds
 - Repeat 4 times until you hit a total of 250 ml
 
-![Kalita Wave](./kalitawave.jpg 'Kalita Wave')
+![Kalita Wave](./kalitawave.jpg "Kalita Wave")
 
 ### Moka Pot aka Bialetti
 
 We have a Bialetti Venus with 12g coffee volume. Contrary to popular belief, it does not produce espresso (due to the missing pressure). It produces a very strong coffee, which is often bitter. The key to getting the brew right: Fill the bottom with already hot water to just under the steam valve. Put in the ground coffee (17-20 clicks), but do not compress it in any way. This can create channeling (water channels instead of water going through evenly distributed) and as consequence an uneven extraction leading to bitterness.
 Put it on medium heat onto the oven. Keep the cap open to watch the extraction. If it starts hissing immediately cool it down under cold water. Hopefully the result is not bitter. Unfortunately it’s still not very consistent, but mostly good.
 
-![Moka Pot](./mokapot.jpg 'Moka Pot')
+![Moka Pot](./mokapot.jpg "Moka Pot")
 
 ### Fake Cappuccino
 

@@ -7,13 +7,16 @@ description: This year I decided to come back to Cadiz for FP nerdery...
 After a stellar experience last year where I was invited by 47degrees winning a golden ticket at Scaladays, I decided to come back to Cadiz for the 2019 edition as well. This blog post gives you some insights into my experiences and hopefully convinces you to join next year as well.
 
 ## Travel
+
 Cadiz is a bit hard to reach coming from an international destination. Closest airport is located near Jerez, but this year we decided to fly to Sevilla, spend some hours there and then go to Cadiz by train. The train took roughly 90 minutes and was a very pleasant experience. If you were wondering about the "we" mentioned earlier: Kirill (@darkiri), Andy (@_andys8) and me formed a travel group booking the same flights and hotel.
 
 ## Cadiz
-On the first evening we were hanging out with some other Autoscouties who arrived earlier than us + some other colleagues  from Barcelona. Cadiz is a lovely town, which offers a lot of places to have good food and enjoy some drinks and this is exactly what we did. 
+
+On the first evening we were hanging out with some other Autoscouties who arrived earlier than us + some other colleagues from Barcelona. Cadiz is a lovely town, which offers a lot of places to have good food and enjoy some drinks and this is exactly what we did.
 
 ## Day One
-The first day started off with the unconference, which I spent mostly in the hallway, since I met some people who I had not seen for ages. The workshops started right after the unconference. Note that I'm not very excited about large group workshops, which also are very time limited as well. 
+
+The first day started off with the unconference, which I spent mostly in the hallway, since I met some people who I had not seen for ages. The workshops started right after the unconference. Note that I'm not very excited about large group workshops, which also are very time limited as well.
 
 Adam Rosien managed to overcome this and raised some interest in me to look a bit deeper into Property Based Testing. Unfortunately the session was too short to really go into deep and answer the interesting questions of how to write good property based tests for real world programs.
 

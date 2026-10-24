@@ -23,7 +23,9 @@ const { Content } = await render(post)
 <Base title={post.data.title} description={post.data.description}>
   <article>
     <header class="post-header">
-      <a class="back" href="/blog/">← Writing</a>
+      <a class="back" href="/blog/">
+        ← Writing
+      </a>
       <h1>{post.data.title}</h1>
       <time class="meta" datetime={post.data.date.toISOString()}>
         {formatDate(post.data.date)}
@@ -37,30 +39,26 @@ const { Content } = await render(post)
   <aside class="author">
     <Image src={profilePic} alt="" width={48} height={48} densities={[1, 2]} />
     <p>
-      Written by <a href="/">Martin Lechner</a>, who works on developer
-      experience at Personio. Find him on <a href={SOCIAL.linkedIn}>LinkedIn</a>.
+      Written by <a href="/">Martin Lechner</a>, who works on developer experience at Personio. Find
+      him on <a href={SOCIAL.linkedIn}>LinkedIn</a>.
     </p>
   </aside>
 
   <nav class="pager" aria-label="More posts">
-    {
-      previous ? (
-        <a href={`/blog/${previous.id}/`} rel="prev">
-          <span class="meta">Older</span>
-          {previous.data.title}
-        </a>
-      ) : (
-        <span />
-      )
-    }
-    {
-      next && (
-        <a href={`/blog/${next.id}/`} rel="next" class="next">
-          <span class="meta">Newer</span>
-          {next.data.title}
-        </a>
-      )
-    }
+    {previous ? (
+      <a href={`/blog/${previous.id}/`} rel="prev">
+        <span class="meta">Older</span>
+        {previous.data.title}
+      </a>
+    ) : (
+      <span />
+    )}
+    {next && (
+      <a href={`/blog/${next.id}/`} rel="next" class="next">
+        <span class="meta">Newer</span>
+        {next.data.title}
+      </a>
+    )}
   </nav>
 </Base>
 
