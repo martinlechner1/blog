@@ -11,7 +11,8 @@
     "dev": "astro dev",
     "build": "astro check && astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "lint:prose": "node scripts/lint-prose.js"
   },
   "dependencies": {
     "@astrojs/rss": "^4.0.19",
@@ -20,6 +21,7 @@
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.12",
+    "harper.js": "^2.13.0",
     "typescript": "^6.0.3"
   }
 }
