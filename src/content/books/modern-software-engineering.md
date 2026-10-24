@@ -3,7 +3,9 @@ title: Modern Software Engineering
 author: David Farley
 category: Engineering
 date: 2026-10-24
-draft: true
+draft: false
 ---
 
-Write a few words about why this book is worth reading.
+I've always believed that fast feedback and small steps are what make teams good at building software. This book explains why, and it ties modularity, cohesion, coupling and testability into one coherent model.
+
+In the age of AI, this matters more than ever. Writing code is getting cheap, but knowing whether it's correct and keeping a system changeable isn't. When an assistant can produce hundreds of lines in seconds, test-driven development, fast feedback and well-separated modules are what keep you in control. Writing the test first forces you to state what the code should do before anyone, human or machine, writes it. The fundamentals in this book are exactly the skills that don't get automated away. I can highly recommend it.
