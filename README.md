@@ -9,6 +9,7 @@ npm install
 npm run dev         # start the dev server
 npm run build       # type-check and build into dist/
 npm run lint:prose  # check spelling and grammar of all Markdown files
+npm run format      # format everything with Prettier
 ```
 
 ## Content
