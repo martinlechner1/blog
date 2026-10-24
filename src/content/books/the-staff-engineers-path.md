@@ -6,4 +6,4 @@ date: 2026-10-24
 draft: true
 ---
 
-TODO: a few words on why this book is worth reading.
+Write a few words about why this book is worth reading.

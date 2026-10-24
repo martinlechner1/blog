@@ -9,9 +9,7 @@ import { SITE, SOCIAL } from "../site"
 const posts = (await getCollection("blog"))
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
   .slice(0, 3)
-const talks = (await getCollection("talks"))
-  .sort((a, b) => a.data.order - b.data.order)
-  .slice(0, 3)
+const talks = (await getCollection("talks")).sort((a, b) => a.data.order - b.data.order).slice(0, 3)
 const bookCount = (await getCollection("books", book => !book.data.draft)).length
 ---
 
@@ -33,15 +31,20 @@ const bookCount = (await getCollection("books", book => !book.data.draft)).lengt
   </section>
 
   <p class="lede">
-    I work on developer experience at Personio and care a lot about people,
-    tech, AI agents, photography and good coffee. Previously at
-    Twitter&nbsp;1.0, AutoScout24 and Jambit.
+    I work on developer experience at Personio and care a lot about people, tech, AI agents,
+    photography and good coffee. Previously at Twitter&nbsp;1.0, AutoScout24 and Jambit.
   </p>
 
   <ul class="contact">
-    <li><a href={SOCIAL.linkedIn}>LinkedIn</a></li>
-    <li><a href={SOCIAL.github}>GitHub</a></li>
-    <li><a href={`mailto:${SITE.email}`}>{SITE.email}</a></li>
+    <li>
+      <a href={SOCIAL.linkedIn}>LinkedIn</a>
+    </li>
+    <li>
+      <a href={SOCIAL.github}>GitHub</a>
+    </li>
+    <li>
+      <a href={`mailto:${SITE.email}`}>{SITE.email}</a>
+    </li>
   </ul>
 
   <div class="section-head">
@@ -55,16 +58,14 @@ const bookCount = (await getCollection("books", book => !book.data.draft)).lengt
     <a href="/talks/">All talks →</a>
   </div>
   <ul class="entries">
-    {
-      talks.map(({ data }) => (
-        <li>
-          <h3>
-            <a href={data.links[0].url}>{data.title}</a>
-          </h3>
-          <span class="meta">{data.kind}</span>
-        </li>
-      ))
-    }
+    {talks.map(({ data }) => (
+      <li>
+        <h3>
+          <a href={data.links[0].url}>{data.title}</a>
+        </h3>
+        <span class="meta">{data.kind}</span>
+      </li>
+    ))}
   </ul>
 
   <a class="books-card" href="/books/">

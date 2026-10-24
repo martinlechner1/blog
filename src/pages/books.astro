@@ -5,30 +5,34 @@ import { formatDate } from "../site"
 
 const books = await Promise.all(
   (await getCollection("books", book => !book.data.draft))
-    .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf() || a.data.title.localeCompare(b.data.title))
+    .sort(
+      (a, b) =>
+        b.data.date.valueOf() - a.data.date.valueOf() || a.data.title.localeCompare(b.data.title)
+    )
     .map(async book => ({ ...book, Content: (await render(book)).Content }))
 )
 ---
 
-<Base title="Books" description="Books Martin Lechner enjoyed reading, with a short review of each.">
+<Base
+  title="Books"
+  description="Books Martin Lechner enjoyed reading, with a short review of each."
+>
   <h1>Books</h1>
   <p class="lede">A collection of books I quite enjoyed reading, each with a few words on why.</p>
 
   <div class="books">
-    {
-      books.map(({ data, Content }) => (
-        <article class="book">
-          <h2>{data.title}</h2>
-          <p class="author">{data.author}</p>
-          <div class="review">
-            <Content />
-          </div>
-          <p class="meta">
-            <time datetime={data.date.toISOString()}>{formatDate(data.date)}</time> · {data.category}
-          </p>
-        </article>
-      ))
-    }
+    {books.map(({ data, Content }) => (
+      <article class="book">
+        <h2>{data.title}</h2>
+        <p class="author">{data.author}</p>
+        <div class="review">
+          <Content />
+        </div>
+        <p class="meta">
+          <time datetime={data.date.toISOString()}>{formatDate(data.date)}</time> · {data.category}
+        </p>
+      </article>
+    ))}
   </div>
 </Base>
 

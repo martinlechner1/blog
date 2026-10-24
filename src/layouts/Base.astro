@@ -43,24 +43,27 @@ const isActive = (href: string) => Astro.url.pathname.startsWith(href)
       is:inline
       data-goatcounter="https://lechnerwork.goatcounter.com/count"
       async
-      src="https://gc.zgo.at/count.js"></script>
+      src="https://gc.zgo.at/count.js"
+    ></script>
   </head>
   <body>
-    <a class="skip" href="#main">Skip to content</a>
+    <a class="skip" href="#main">
+      Skip to content
+    </a>
     <header class="site-header">
       <div class="container header-inner">
-        <a class="wordmark" href="/">{SITE.name}</a>
+        <a class="wordmark" href="/">
+          {SITE.name}
+        </a>
         <nav aria-label="Main">
           <ul>
-            {
-              nav.map(({ href, label }) => (
-                <li>
-                  <a href={href} aria-current={isActive(href) ? "page" : undefined}>
-                    {label}
-                  </a>
-                </li>
-              ))
-            }
+            {nav.map(({ href, label }) => (
+              <li>
+                <a href={href} aria-current={isActive(href) ? "page" : undefined}>
+                  {label}
+                </a>
+              </li>
+            ))}
           </ul>
         </nav>
       </div>
@@ -72,14 +75,28 @@ const isActive = (href: string) => Astro.url.pathname.startsWith(href)
 
     <footer class="site-footer">
       <div class="container footer-inner">
-        <p>© {new Date().getFullYear()} {SITE.name}</p>
+        <p>
+          © {new Date().getFullYear()} {SITE.name}
+        </p>
         <ul>
-          <li><a href={SOCIAL.linkedIn}>LinkedIn</a></li>
-          <li><a href={SOCIAL.github}>GitHub</a></li>
-          <li><a href={SOCIAL.flickr}>Flickr</a></li>
-          <li><a href="/rss.xml">RSS</a></li>
-          <li><a href="/legal/">Legal notice</a></li>
-          <li><a href="/privacy/">Privacy</a></li>
+          <li>
+            <a href={SOCIAL.linkedIn}>LinkedIn</a>
+          </li>
+          <li>
+            <a href={SOCIAL.github}>GitHub</a>
+          </li>
+          <li>
+            <a href={SOCIAL.flickr}>Flickr</a>
+          </li>
+          <li>
+            <a href="/rss.xml">RSS</a>
+          </li>
+          <li>
+            <a href="/legal/">Legal notice</a>
+          </li>
+          <li>
+            <a href="/privacy/">Privacy</a>
+          </li>
         </ul>
       </div>
     </footer>

@@ -10,6 +10,8 @@ const posts = (await getCollection("blog")).sort(
 
 <Base title="Writing" description="Articles by Martin Lechner on software engineering and more.">
   <h1>Writing</h1>
-  <p class="lede">Notes on software engineering, conferences and the occasional coffee deep dive.</p>
+  <p class="lede">
+    Notes on software engineering, conferences and the occasional coffee deep dive.
+  </p>
   <PostList posts={posts} />
 </Base>
