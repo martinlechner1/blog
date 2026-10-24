@@ -38,6 +38,12 @@ const isActive = (href: string) => Astro.url.pathname.startsWith(href)
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
     <meta name="twitter:card" content="summary" />
+    <!-- Cookieless page view counter, see /privacy/ -->
+    <script
+      is:inline
+      data-goatcounter="https://lechnerwork.goatcounter.com/count"
+      async
+      src="https://gc.zgo.at/count.js"></script>
   </head>
   <body>
     <a class="skip" href="#main">Skip to content</a>
