@@ -5,4 +5,4 @@ category: Engineering
 date: 2019-11-10
 ---
 
-Free ebook by Underscore.io. It is a perfect primer on how to apply Cats to make your Scala code better.
+Free e-book by Underscore.io. It is a perfect primer on how to apply Cats to make your Scala code better.

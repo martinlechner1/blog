@@ -4,17 +4,17 @@ date: "2019-10-27T22:50:32.169Z"
 description: GDPR compliant tracking with Netlify functions and DynamoDB 
 ---
 
-Since launching this website I had the idea to have some form of hit counter to see how many people visit each page. It is also very important for me to respect visitor's privacy. I was looking a bit around, but did not find a good solution which fulfills this simple usecase for free. Therefore I decided to write my own tracking.
+Since launching this website I had the idea to have some form of hit counter to see how many people visit each page. It is also very important for me to respect visitor's privacy. I was looking a bit around, but did not find a good solution which fulfils this simple use case for free. Therefore, I decided to write my own tracking.
 
 ## Netlify functions
 My website is already deployed on Netlify so naturally I was looking into options there.
-I know that my website is not high volume, which makes the free tier of Netlify functions a perfect fit to glue the events from the website to some serverless data store. My website consists of a Gatsby project deployed on netlify, so I had to figure out how to deploy the function alongside.
+I know that my website is not high volume, which makes the free tier of Netlify functions a perfect fit to glue the events from the website to some serverless data store. My website consists of a Gatsby project deployed on Netlify, so I had to figure out how to deploy the function alongside.
 
-Note: All code is included in the [Github Sources](https://github.com/martinlechner1/blog) of this blog.
+Note: All code is included in the [GitHub Sources](https://github.com/martinlechner1/blog) of this blog.
 
 Setting up a function consists of multiple steps (assuming that your project uses yarn to build):
 
-* Create a netlify.toml and add:
+* Create a `netlify.toml` and add:
 ```
 [build]  
   functions = "lambda"
@@ -36,19 +36,19 @@ export async function handler(event, context) {
 }
 ```
 
-* Commit, push and wait for netlify deployment
+* Commit, push and wait for Netlify deployment
 * Do a request to `yoursite.com/.netlify/functions/filename` to check whether it works
 * For local dev `netlify-lambda serve src/lambda` can be used. It exposes the functions on port `9000`, so you can request `localhost:9000/.netlify/functions/filename`
 
 ## Storing the data
 
-Now that we have a foundation to deploy netify functions we can focus back on the initial goal, which was creating a hit counter. I first thought about using google sheets api, but didn't like the documentation somehow and knew already how to do it with DynamoDB. 
+Now that we have a foundation to deploy Netlify functions we can focus back on the initial goal, which was creating a hit counter. I first thought about using the Google Sheets API, but didn't like the documentation somehow and knew already how to do it with DynamoDB. 
 
 DynamoDB is a column based serverless distributed key-value store. The basic idea is that data is partitioned and queryable by partition key with an optional sort key for ordering. AWS documentation is quite extensive, please check it out for more details.
 
 We will store (and increment) the count for every page on a daily basis. The partition key will be the `page` and the sort key will be the `date`. This is optimized for getting all data for a page. If you want to query date first you could make date the partition key or add a global secondary index to the table, which supports the other access pattern.
 
-DynamoDB is available in the free tier of AWS, so the only prequisite is having an AWS account. I will quickly walk you through the steps to set it up (This might be hard if you do not have any AWS experience. Follow the documentation of aws if it is unclear):
+DynamoDB is available in the free tier of AWS, so the only prerequisite is having an AWS account. I will quickly walk you through the steps to set it up (This might be hard if you do not have any AWS experience. Follow the documentation of AWS if it is unclear):
 
 * Log into AWS console
 * Select IAM, create a User (note down the credentials for the user (`ACCESS_KEY_ID`, `SECRET_ACCESS_KEY`))
@@ -69,8 +69,8 @@ DynamoDB is available in the free tier of AWS, so the only prequisite is having 
 }
 ```
 * Create the table with primary partition key (HASH) with name `page` and type `S` and secondary key `date` also of type `S`
-* If you want to play around locally you would need to install aws cli and create a config + credentials file for this user
-* As next step we will share the credentials inside netlify. Go to your site > Settings > Build & Deploy > Environment. There create two variables holding the AWS credentials. I named them `KEY_ID` and `SECRECT_ACCESS_KEY`. Note that you cannot use `AWS_` prefixes. 
+* If you want to play around locally you would need to install the AWS CLI and create a config + credentials file for this user
+* As next step we will share the credentials inside Netlify. Go to your site > Settings > Build & Deploy > Environment. There create two variables holding the AWS credentials. I named them `KEY_ID` and `SECRECT_ACCESS_KEY`. Note that you cannot use `AWS_` prefixes. 
 
 ## Tracking function
 
@@ -119,7 +119,7 @@ exports.handler = async (event, context) => {
 }
 ```
 
-Add this to `src/lambda/hit.js` and run `yarn add aws-sdk` inside `src/lambda` folder. Deploy the function and test with manual requests if the counters get updated in DynamoDB (check out via aws console). Note: For me it's enough to be able to check stats in aws console, so I won't guide further than storing the data.
+Add this to `src/lambda/hit.js` and run `yarn add aws-sdk` inside `src/lambda` folder. Deploy the function and test with manual requests if the counters get updated in DynamoDB (check out via AWS console). Note: For me it's enough to be able to check stats in AWS console, so I won't guide further than storing the data.
 
 ## Hooking up the tracking
 
@@ -140,7 +140,7 @@ export const useTracking = page =>
 
 ```
 
-It takes a page parameter and calls the function with it via http (based on fetch api).
+It takes a page parameter and calls the function with it via HTTP (based on the fetch API).
 This hook now can be used in all pages to track hits. Added to the remark content of the blog this might look like:
 
 ```javascript
@@ -156,6 +156,6 @@ Note that your React components need to be function components to work with hook
 
 That's it! Commit, push, deploy and test it. You should now see the test hits you're generating in DynamoDB. Afterwards reset the DynamoDB to be empty and let traffic flow in.
 
-Note: All code is in the [Github Sources](https://github.com/martinlechner1/blog) of this blog.
+Note: All code is in the [GitHub Sources](https://github.com/martinlechner1/blog) of this blog.
 
 If you have any questions or want to provide feedback (I'd be very happy), feel free to reach out via twitter: [@m4nl5r](https://twitter.com/m4nl5r)
